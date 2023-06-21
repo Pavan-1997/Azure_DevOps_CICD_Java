@@ -12,7 +12,7 @@ All the commands are documented in the CMD.txt file
 
 
 -----------------------------------------------------------------------------------------------------------------------------------
-#ABOUT THE APPLICATION
+# ABOUT THE APPLICATION
 
 # Secret Santa Generator Application :santa:
 
