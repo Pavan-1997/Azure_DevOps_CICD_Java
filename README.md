@@ -83,5 +83,4 @@ A small summary of the skills showcased during this project: :small_red_triangle
 * MVC architecture along with DAO, model, service layers, and similar
 * Accessibility, web design
 * Web application debugging
-* Where Santa lives
-* More! :)
+
