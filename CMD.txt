@@ -1,0 +1,116 @@
+1. Import a git repo in Repos clone of Azure DevOps
+
+
+2. Now create a new Agent Pool
+
+Go to Project Settings
+
+Pipelines -> Agent pools -> New -> Self-hosted - > Give a pool name -> Check the Grant access permission to all pipelines
+
+
+3. Have a Agent setup, say a EC2 Intance - Ubuntu
+
+sudo apt-get update -y
+
+sudo apt-get upgrade -y 
+
+sudo apt-get install maven -y
+
+Now go to the pool created
+
+New agent -> Click on Linux -> Copy the agent
+
+In the terminal download the agent package
+
+mkdir myagent 
+
+cd myagent
+
+wget https://vstsagentpackage.azureedge.net/agent/3.220.5/vsts-agent-linux-x64-3.220.5.tar.gz
+
+tar -xvf vsts-agent-linux-x64-3.220.5.tar.gz
+
+./config.sh
+
+Type Y
+
+Now for server URL - https://dev.azure.com/sqlonlinux
+
+Click enter for PAT
+
+Now go to User settings -> Select Personal Access Tokens -> Click on New Token
+
+Now enter the earlier created pool name
+
+Now to start the agent -> ./run.sh
+
+
+4. Now go to Pipelines and create on using a classic editior
+
+Select Maven
+
+Now select the created Agent pool
+
+Now go to Get sources and verify the configs 
+
+Now go to Agent job 1 -> Select the created Agent pool 
+
+Now go to Maven pom.xml -> You can Maven goals like compile , if have 2nd goal than Clone task 
+
+Now go to Copy Files to , this is a temporary location where the artifact is stayed until its published 
+
+Now go to Publish Artifact 
+
+Triggers are like webhooks -> check Enable continuous integration
+
+Now save and queue -> save and run 
+
+This is Trigger the Pipeline
+
+
+5. Now you can see the pipeline succeded with 1 published; 1 consumed where it has the artifact
+
+
+6. Now performing Sonarqube analysis using Docker container in the agent prior install docker
+
+sudo apt-get install docker.io
+
+sudo usermod -aG docker $USER
+
+docker run -d  --name sonar -p 9000:9000 sonarqube:lts-community
+
+Make sure the SG are open for 9000 in EC2
+
+
+7. Now add sonarqube in the pipeline
+
+Go to Pipelines -> click on the + icon -> search and add Prepare analysis on SonarQube + Run Code Analysis + Publish Quality Gate Result
+
+Now add SonarQube Server Endpoint -> Give Server Url along with Token -> Give connection name -> check Grant access permission to all pipelines
+
+Now choose to run the analysis as a standalone server with Project 
+
+Now provide Project Key, Project Name
+
+In additional properties provide this sonar.java.binaries=.
+
+Now click on save and queue
+
+
+8. Go to SonarQube server and verify the artifact along with security parameters
+
+
+9. Now perform OWASP security analysis
+
+Now to Pipelines -> click on the + -> Seach for OWASP in the marketplace add to project -> Refresh and add the task to the pipeline -> Give the project name -> In scan path just put "."
+
+Now click on save and queue
+
+
+10. Now add task to the pipeline i.e Command Line Script to run the Java JAR file , add the below command in the Script feild
+
+java -jar target/*.jar
+
+
+11. Access the Application
+
