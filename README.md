@@ -1,6 +1,12 @@
 # Azure DevOps Pipeline setup having stages Maven-SonarQube-OWASP 
 
+In this project have setup a Azure pipeline where the source code is fetched from my GitHub, Pipeline was setup having stages for Maven, SonarQube and OWASP.
 
+At the end ran the JAVA Jar file in the Command Line Script as a stage in the pipeline and later accessed the application.
+
+All the commands are documented in the CMD.txt file 
+
+-----------------------------------------------------------------------------------------------------------------------------------
 
 # Secret Santa Generator Application :santa:
 
