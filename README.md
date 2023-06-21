@@ -1,6 +1,6 @@
 # Azure DevOps Pipeline setup having tasks Maven-SonarQube-OWASP 
 
-In this project I have setup a Azure pipeline where the source code is fetched from my GitHub, Pipeline was setup having tasks for Maven, SonarQube and OWASP.
+In this project I have setup a Azure pipeline where the source code is fetched from my GitHub, Pipeline was setup having tasks for Maven, Push Artifact, SonarQube and OWASP.
 
 The pipeline is executed on agent where I have made use of a EC2 Ubuntu machine to run the jobs.
 
