@@ -1,14 +1,18 @@
-# Azure DevOps Pipeline setup having stages Maven-SonarQube-OWASP 
+# Azure DevOps Pipeline setup having tasks Maven-SonarQube-OWASP 
 
-In this project have setup a Azure pipeline where the source code is fetched from my GitHub, Pipeline was setup having stages for Maven, SonarQube and OWASP.
+In this project I have setup a Azure pipeline where the source code is fetched from my GitHub, Pipeline was setup having tasks for Maven, SonarQube and OWASP.
 
 The pipeline is executed on agent where I have made use of a EC2 Ubuntu machine to run the jobs.
 
-At the end ran the JAVA Jar file in the Command Line Script as a stage in the pipeline and later accessed the application.
+At the end ran the JAVA jar file in the Command Line Script as a task in the pipeline and later accessed the application.
 
 All the commands are documented in the CMD.txt file 
 
+![image](https://github.com/Pavan-1997/Azure_DevOps_Java_Local/assets/32020205/85b66e24-4d32-416f-925b-2f78a69064dc)
+
+
 -----------------------------------------------------------------------------------------------------------------------------------
+#ABOUT THE APPLICATION
 
 # Secret Santa Generator Application :santa:
 
