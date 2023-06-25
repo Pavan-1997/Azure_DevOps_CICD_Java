@@ -1,10 +1,10 @@
 # Azure DevOps Pipeline setup having tasks Maven-SonarQube-OWASP 
 
-In this project I have setup a Azure pipeline where the source code is fetched from my GitHub, Pipeline was setup having tasks for Maven, Push Artifact, SonarQube and OWASP.
+In this project I have set up an Azure pipeline where the source code is fetched from Azure Repos, Pipeline was set up having tasks for Maven, Push Artifact, SonarQube, and OWASP.
 
-The pipeline is executed on agent where I have made use of a EC2 Ubuntu machine to run the jobs.
+The pipeline is executed on an agent where I have made use of an EC2 Ubuntu machine to run the jobs.
 
-At the end ran the JAVA jar file in the Command Line Script as a task in the pipeline and later accessed the application.
+In the end, ran the JAVA jar file in the Command Line Script as a task in the pipeline and later accessed the application.
 
 All the commands are documented in the CMD.txt file 
 
