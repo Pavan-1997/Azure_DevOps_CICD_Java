@@ -45,6 +45,7 @@ Secret Santa Generator is a Spring Boot application built using Maven. You can b
 ```
 git clone https://github.com/NotTheBest/secretsanta-generator.git
 cd secretsanta-generator
+chmod +x mvnw
 ./mvnw package
 java -jar target/*.jar
 ```
